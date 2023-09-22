@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Translate App</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f7f7f7;
@@ -15,9 +20,11 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+
     }
 
     .container {
+      position: fixed;
       max-width: 600px;
       padding: 40px;
       background-color: white;
@@ -77,13 +84,6 @@
       margin-top: 20px;
       color: #007bff;
     }
-
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-   
   </style>
 
 </head>
@@ -118,7 +118,7 @@
     </div>
   </div>
 
-  <div id="google_translate_element" style="position: fixed; bottom: 200px;"></div>
+  <div id="google_translate_element" style="position: fixed; bottom: 10px;"></div>
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
