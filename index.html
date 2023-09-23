@@ -86,12 +86,50 @@
       margin-top: 20px;
       color: #007bff;
     }
-   label{
-    margin-top: 2rem;
-   }
-   h5{
-    margin-top: 1rem;
-   }
+
+    label {
+      margin-top: 2rem;
+    }
+
+    h5 {
+      margin-top: 1rem;
+    }
+
+    #google_translate_element {
+      position: fixed;
+      bottom: 120px;
+
+    }
+
+    @media screen and (max-width: 500px) {
+      body {
+        overflow-x: hidden;
+        /* Yatay kaydırmayı kapat */
+      }
+
+      #google_translate_element {
+        position: fixed;
+        bottom: 10px;
+        white-space: nowrap;
+        /* Çeviri düğmelerini yan yana sığdırmak için */
+        display: flex;
+        flex-direction: column;
+        /* Düğmeleri dikeyde sırala */
+        align-items: flex-end;
+        /* Düğmeleri sağ üst köşeye hizala */
+        height: auto;
+        /* Yüksekliği otomatik olarak ayarla */
+        width: auto;
+
+        background-color: #fff;
+        /* Arka plan rengi */
+        color: #333;
+        /* Metin rengi */
+        font-size: 16px;
+        /* Yazı tipi boyutu */
+
+      }
+    }
   </style>
 
 </head>
@@ -108,7 +146,7 @@
                 <div class="input-field col s8">
                   <label for="word">Çevirilecek Kelime</label>
 
-                  <input type="text" name="word" id="word"  placeholder="Naber" />
+                  <input type="text" name="word" id="word" placeholder="Naber" />
                 </div>
                 <button type="submit" class="btn col s8">Çevir</button>
               </form>
@@ -127,7 +165,10 @@
     </div>
   </div>
 
-  <div id="google_translate_element" style="position: fixed; bottom: 10px;"></div>
+  <div id="google_translate_element">
+  
+  </div>
+
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
